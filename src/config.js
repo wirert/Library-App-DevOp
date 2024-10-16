@@ -1,1 +1,1 @@
-export const settings = { host: "https://library-catalog.onrender.com" };
+export const settings = { host: "https://librarybe-dif6.onrender.com" };
