@@ -22,5 +22,6 @@ jobs:
     - name: Run the BE
       run: npm run server &
     - name: Run FE
-      run: nmp run start &
-   
+      run: nmp run start &    
+    - name: Run tests
+      run: npm test
