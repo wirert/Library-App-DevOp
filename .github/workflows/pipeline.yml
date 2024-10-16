@@ -12,17 +12,17 @@ jobs:
     steps:
     - name: Checkout the code
       uses: actions/checkout@v4
-    - name: Use Node.js 18
+    - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 20
         cache: 'npm'
     - name: Install dependencies
       run: npm ci   
     - name: Run the BE
-      run: npm run server &
+      run: npm run start:be &
     - name: Run FE
-      run: nmp run start &
+      run: nmp run start:fe &
     - name: Install Playwright Browsers
       run: npx playwright install
     - name: Run tests
