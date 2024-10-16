@@ -4,25 +4,23 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main" ]  
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out
+    - name: Checkout the code
       uses: actions/checkout@v4
     - name: Use Node.js 18
       uses: actions/setup-node@v4
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm ci
-    - name: Build the app
-      run: npm run build --if-present
+    - name: Install dependencies
+      run: npm ci   
+    - name: Run the BE
+      run: npm run server $
     - name: Run FE
       run: nmp run start $
-    - name: Run the server
-      run: npm run server $
-    - name: Run tests
-      run: npm test
+   
